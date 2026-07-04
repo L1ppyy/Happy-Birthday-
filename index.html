@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Starry Letter — untuk Riri</title>
+
+<!--
+  ======================================================================
+  THE STARRY LETTER — website ucapan ulang tahun
+  ----------------------------------------------------------------------
+  Cara kustomisasi cepat: cari objek CONFIG di bagian <script> paling
+  atas. Ubah nama, tanggal, isi surat, harapan, dan pesan penutup di
+  sana. Tidak perlu menyentuh bagian lain untuk sekadar mengganti teks.
+  ======================================================================
+-->
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="app">
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="fx-canvas"></canvas>
+  <button id="mute-btn" aria-label="Bisukan musik">🔈</button>
+
+  <!-- SCENE 1: INTRO -->
+  <section class="scene active" id="scene-intro">
+    <p class="eyebrow">The Starry Letter</p>
+    <p class="line-serif title-msg">Di antara jutaan bintang di langit malam, hari ini ada satu cahaya yang terasa lebih istimewa.</p>
+    <button class="glow-btn" id="btn-start">Mulai Perjalanan</button>
+  </section>
+
+  <!-- SCENE 2: ENVELOPE + LETTER -->
+  <section class="scene" id="scene-letter">
+    <div class="envelope-wrap" id="envelope">
+      <div class="env-shadow-fold"></div>
+      <div class="env-body"></div>
+      <div class="env-flap"></div>
+      <div class="env-seal">★</div>
+      <p class="envelope-hint">Klik amplopnya</p>
+    </div>
+
+    <article class="letter-card" id="letter-card" aria-live="polite">
+      <p class="letter-heading" id="letter-heading">Untuk Riri,</p>
+      <div class="letter-body" id="letter-body"></div>
+      <div class="letter-continue" id="letter-continue">
+        <button id="btn-letter-continue">Lanjutkan</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- SCENE 3: CONSTELLATION -->
+  <section class="scene" id="scene-constellation">
+    <p class="constellation-caption" id="constellation-caption">seolah langit malam sendiri sedang mengucapkannya</p>
+    <button class="glow-btn hidden" id="btn-constellation-continue">Lanjutkan</button>
+  </section>
+
+  <!-- SCENE 4: WISHES -->
+  <section class="scene" id="scene-wishes">
+    <p class="wish-text" id="wish-text"></p>
+    <div class="wish-progress" id="wish-progress"></div>
+  </section>
+
+  <!-- SCENE 5: ISLAND -->
+  <section class="scene" id="scene-island">
+    <div class="island-scene-wrap">
+      <div class="island-tree"></div>
+      <div class="island-cake">
+        <div class="cake-tier">
+          <div class="cake-icing"></div>
+        </div>
+        <div class="candle" id="candle">
+          <div class="flame" id="flame"></div>
+          <div class="candle-smoke" id="candle-smoke"></div>
+        </div>
+      </div>
+      <div class="island-base"></div>
+    </div>
+    <p class="island-instruction" id="island-instruction">Buat satu harapan, lalu klik lilinnya.</p>
+  </section>
+
+  <!-- SCENE 6: FINAL -->
+  <section class="scene" id="scene-final">
+    <h1 class="final-name" id="final-name">Riri</h1>
+    <p class="final-sub" id="final-sub">Happy Birthday</p>
+    <p class="final-msg" id="final-msg"></p>
+    <button class="glow-btn hidden" id="btn-final-continue">Lanjutkan</button>
+  </section>
+
+  <!-- SCENE 7: ENDING -->
+  <section class="scene" id="scene-ending">
+    <p class="ending-text" id="ending-text">Sampai bertemu di perjalanan berikutnya.</p>
+  </section>
+
+  <div id="blackout"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
